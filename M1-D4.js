@@ -38,7 +38,7 @@ const crazyDiff = function (number) {
 Write a function "boundary" which accept an integer N and returns true if N is within 20 and 100 (included) or equal to 400.
 */
 
-const boundary = N => (20 <= N <= 200 || N === 400) ? true : false;
+const boundary = N => (20 <= N && N <= 200 || N === 400) ? true : false;
 
 
 
