@@ -10,7 +10,7 @@ ASSIGNMENT RULES
 Write a function "area" which receives 2 parameters (l1,l2) and calculate the area of the rectangle.
 */
 
-const area = (l1, l2) => (l1 + l2) * 2;
+const area = (l1, l2) => l1 * l2;
 
 /* EXERCISE 2
 Write a function "crazySum" which receives two given integers. If the two values are same, then returns triple their sum.
