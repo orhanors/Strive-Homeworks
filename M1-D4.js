@@ -77,7 +77,7 @@ const upperFirst = function (S) {
 
         splittedString[i] = splittedString[i].charAt(0).toUpperCase() + splittedString[i].substring(1);
     }
-    return splittedString.join(" ")
+    return splittedString.join(" ");
 }
 
 /* EXERCISE 9
