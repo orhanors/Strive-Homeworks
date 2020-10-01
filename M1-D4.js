@@ -18,8 +18,8 @@ Write a function "crazySum" which receives two given integers. If the two values
 
 const crazySum = function (int1, int2) {
     let sumofTriple = int1 === int2 ? (int1 + int2) * 3 : "Values aren't same";
+    return sumofTriple;
 }
-
 
 
 /* EXERCISE 3
@@ -30,9 +30,21 @@ the specified
 number is greater than 19.
 */
 
+const crazyDiff = function (number) {
+    const absDiff = Math.abs(number - 19);
+    const result = (absDiff > 19) ? (absDiff * 3) : absDiff;
+    return result;
+}
+
+
 /* EXERCISE 4
 Write a function "boundary" which accept an integer N and returns true if N is within 20 and 100 (included) or equal to 400.
 */
+
+const boundary = function (N) {
+    let whatIsN = (20 <= N <= 200 || N === 400) ? true : false;
+    return whatIsN;
+}
 
 /* WRITE YOUR CODE HERE */
 
