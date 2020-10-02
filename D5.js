@@ -170,7 +170,7 @@ Me.skills = Me.skills.slice(0, Me.skills.length - 1);
 */
 
 const Dice = function () {
-  return Math.floor(Math.random() * (6 - 1) + 1);
+  return Math.floor(Math.random() * 6 + 1);
 }
 /* Ex.2 
     Write the function WhoIsBigger that receives 2 numbers and returns the bigger of the 2
