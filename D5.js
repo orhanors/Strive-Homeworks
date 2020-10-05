@@ -452,10 +452,10 @@ const halfTree = function (n) {
 //SOLUTION
 /*
 n=4
-     *   --> 0, 3space 1star
-    ***  --> 1, 2space 3star
-   ***** --> 2, 1space 5star
-  ******* -> 3, 0space 7star
+     *   --> 0 row, 3space 1star
+    ***  --> 1 row, 2space 3star
+   ***** --> 2 row, 1space 5star
+  ******* -> 3 row, 0space 7star
 
   space = (n-index-1)
   star = (2*index+1)
