@@ -1,83 +1,108 @@
-// I want to try to execute all events app.js file but didn't
-// I want to create a global variable but it doesnt work, I created 'title' over and over again
+const changeHeader = function () {
+    let header = document.querySelector('h1');
+    let userInput = document.querySelector('#changeHeader');
 
-window.onload = function () {
-    //alert("Page is succesfully loaded")
-    makeItClickable
+    header.innerText = userInput.value;
+    userInput.value = ''
+
 }
 
+//
+
+window.onload = function () {
+    //alert("Welcome...")
+    makeThemMagnifiable
+};
 const changeTitle = function (newTitle) {
-    let title = document.querySelector('#title');
-    title.innerText = newTitle
+    let header = document.querySelector('h1');
+    header.innerText = newTitle;
 };
 
 const addClassToTitle = function () {
-    let title = document.querySelector('h1');
-    title.classList.add('red-color')
-    title.style.cursor = "pointer"
+    let header = document.querySelector('h1');
+
+    header.classList.add('red-color')
+    header.style.cursor = 'pointer'
 };
 
 const removeClassFromTitle = function () {
-    let title = document.querySelector('h1')
-    title.classList.remove('red-color')
-}
+    let header = document.querySelector('h1');
+    header.classList.remove('red-color')
+};
 
 const changePContent = function () {
-    let content = document.querySelector('div>p')
-    content.innerHTML = "CONTENT CHANGED"
-}
+    let getP = document.querySelector('div p');
+    let userInput = document.querySelector('#changeP')
 
-const changeListTitle = function (content) {
-    let textArea = document.querySelector("#listTextArea")
+    getP.innerText = userInput.value;
+    userInput.value = ''
 
-    content = textArea.value
+};
+const changeListTitle = function () {
+    let header = document.querySelector('#listTitle')
+    let userInput = document.querySelector('#listHeader')
 
-    let listTitle = document.querySelector("#listTitle")
+    header.innerText = userInput.value;
+    userInput.value = ''
 
-    listTitle.innerText = content
 };
 
 const addToTheSecond = function (content) {
-    let text = document.querySelector('#addNewSecond')
-    content = text.value
-    let secondList = document.querySelector("#secondList")
-    let newLine = document.createElement('li')
-    secondList.appendChild(newLine)
-    newLine.innerText = content
+    let secondList = document.querySelector('#secondList');
 
-    text.value = ''
-}
+    let newElement = document.createElement('li')
 
+    let contentInput = document.querySelector('#addElement')
+    content = contentInput.value;
 
-const firstUlDisappear = function () {
-    // Write a function to make the first UL disappear (button)
-    let firstUl = document.querySelector('#firstList')
-    firstUl.style.display = 'none'
-    firstUl.style.display = 'display'
+    newElement.innerText = content;
+    secondList.appendChild(newElement)
+
+    contentInput.value = ''
+
 };
 
-const paintItGreen = function () {};
+const firstUlDisappear = function () {
+    let firstUl = document.getElementById('firstList')
 
+    firstUl.style.display = 'none'
+};
 
-//const makeThemMagnifiable = function () {
-//    let tableEl = document.querySelectorAll('td')
-//
-//    for (let el of tableEl) {
-//        if (el.hasChildNodes == true) {
-//            continue;
-//        } else {
-//            el.style.fontSize = '150%';
-//        }
-//    }
-//
-//};
+const paintItGreen = function () {
+    let everyUl = document.getElementsByTagName('ul')
+
+    for (let el of everyUl) {
+        el.style.backgroundColor = 'green';
+    }
+};
+
+/*
+const makeThemMagnifiable = function () {
+    let cells = document.querySelectorAll('tbody td');
+
+    for (let cell of cells) {
+        cell.addEventListener('mouseover', function () {
+            cell.style.fontSize = '150%'
+        });
+        cell.addEventListener('mouseleave', function () {
+            cell.style.fontSize = '100%'
+        });
+    }
+}
+*/
+
 const toggleShowImages = function () {
+
     let img = document.querySelectorAll('img')
-    for (let el of img) {
-        if (el.style.display === 'none') {
-            el.style.display = 'inline'
+    let button = document.querySelector('#toggleButton')
+    for (let image of img) {
+        if (image.style.display == 'none') {
+            image.style.display = 'inline'
+            button.innerText = 'Hide'
         } else {
-            el.style.display = 'none'
+            image.style.display = 'none'
+            button.innerText = 'Show'
+
         }
     }
 };
