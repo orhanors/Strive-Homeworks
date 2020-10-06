@@ -3,8 +3,8 @@
 
 window.onload = function () {
     //alert("Page is succesfully loaded")
+    makeItClickable
 }
-
 
 const changeTitle = function (newTitle) {
     let title = document.querySelector('#title');
@@ -59,18 +59,18 @@ const firstUlDisappear = function () {
 const paintItGreen = function () {};
 
 
-const makeThemMagnifiable = function () {
-    let tableEl = document.querySelectorAll('td')
-
-    for (let el of tableEl) {
-        if (el.hasChildNodes == true) {
-            continue;
-        } else {
-            el.style.fontSize = '150%';
-        }
-    }
-
-};
+//const makeThemMagnifiable = function () {
+//    let tableEl = document.querySelectorAll('td')
+//
+//    for (let el of tableEl) {
+//        if (el.hasChildNodes == true) {
+//            continue;
+//        } else {
+//            el.style.fontSize = '150%';
+//        }
+//    }
+//
+//};
 const toggleShowImages = function () {
     let img = document.querySelectorAll('img')
     for (let el of img) {
