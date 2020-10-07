@@ -1,4 +1,128 @@
 body {
+    background-color: #ddd;
+    color: rgb(26, 25, 25);
+    padding: 0;
     margin: 0;
-    background-color: antiquewhite;
+    font: 80% 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.inputs {
+    position: relative;
+    z-index: 1;
+    margin-left: 540px;
+    width: 50%;
+    height: 50%;
+
+
+}
+
+#colorPick {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin: 10px auto;
+    padding: 15px;
+    min-height: 300px;
+    height: auto;
+}
+
+#itemList {
+    align-items: center;
+    position: relative;
+    overflow-y: auto;
+    width: 50%;
+    margin: 10px auto;
+    padding: 0px;
+    min-height: 600px;
+    height: auto;
+    background-color: rgb(207, 193, 193);
+    border-radius: 8px;
+}
+
+
+
+ul,
+li {
+    font-size: x-large;
+    align-items: center;
+    position: relative;
+
+}
+
+
+
+#myTaskList {
+    list-style-type: circle;
+}
+
+#newTask {
+    margin-top: 50px;
+    margin-left: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+h1>span:hover {
+    font-size: 130%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: black;
+}
+
+::placeholder {
+    font-size: 50%;
+    text-align: left;
+}
+
+header {
+    background: url("https://victor-mochere.com/wp-content/uploads/2019/05/Best-quotes-from-Socrates.jpg");
+    text-align: center;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 85% 85% / 30%;
+
+}
+
+header .overlay {
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    color: #FFF;
+    text-shadow: 1px 1px 1px #333;
+    background-image: linear-gradient(135deg, #9f05ff69 10%, #fd5e082f 100%);
+
+
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+
+button:hover,
+input[type="button"]:hover {
+    background-color: rgba(107, 99, 109, 0.842);
+    cursor: pointer;
+}
+
+button,
+input[type="button"] {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: #333;
+    background: #fff;
+    box-shadow: 0 3px 20px 0 #0000003b;
 }

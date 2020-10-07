@@ -10,6 +10,43 @@
 </head>
 
 <body>
+    <header>
+        <div class="overlay">
+            <h1>Welcome to your <span id="sophisticated">sophisticated</span> Task List!</h1>
+            <br />
+
+            <span>You can add any task you like by writing it in the specified field and
+                then press "Add new task"</span><br /><br />
+    </header>
+    </div>
+
+    <input type="text" id="newTask" placeholder="write it do it" />
+
+
+    <section class="container">
+        <div class="inputs">
+
+            <input type="button" value="ADD" onclick="addNewTask()" />
+            <button id="removeLast" onclick="removeLast()">Remove Last</button>
+            <button id="removeFirst" onclick="removeFirst()">Remove First</button>
+            <input type="button" value="Sort" onclick="bubbleSort()" />
+
+        </div>
+
+        <div id="itemList">
+            <ul id="myTaskList"></ul>
+            <div id='colorPick'>
+                <input type="color" placeholder="Color" id="colorPicker" />
+                <input type="button" value="Change" onclick="changeTaskBackgroundColor()" />
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
 
 </body>
 
