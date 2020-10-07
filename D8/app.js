@@ -8,7 +8,23 @@ const removeFirst = function () {
     }
 
 }
+const clearAll = function () {
+    let allElements = document.querySelector('#myTaskList');
+    while (allElements.firstChild) {
+        allElements.removeChild(allElements.firstChild)
+    }
+}
 
+
+/* 
+const clearAll = function () {
+    let allElements = document.querySelector('#myTaskList');
+    let children = allElements.childNodes
+    for (let child of children) {
+        allElements.removeChild(children)
+    }
+}
+*/
 
 const removeLast = function () {
     let allElements = document.querySelector('#myTaskList');
