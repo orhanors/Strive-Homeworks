@@ -1,0 +1,48 @@
+body {
+    align-content: center;
+    background-color: #f8f8f8;
+    max-width: 786px;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+h1 {}
+
+#bingoBoard {
+    background-color: #1b1b1b;
+    color: white;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 6px solid #1b1b1b;
+    border-radius: 8px;
+}
+
+.cell {
+    display: inline-block;
+    width: 8%;
+    text-align: center;
+    min-height: 40px;
+    border: 1px solid transparent;
+}
+
+/* Button */
+
+
+input[type="button"]:hover {
+    background-color: #00ff84;
+    cursor: pointer;
+    font-size: x-large;
+
+}
+
+input[type="button"] {
+    margin-bottom: 50px;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: #333;
+    background: #fff;
+    box-shadow: 0 3px 20px 0 #0000003b;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

@@ -1,6 +1,4 @@
 const removeFirst = function () {
-    let removeButton = document.getElementById('removeFirst')
-
     let allElements = document.querySelector('#myTaskList');
 
     if (allElements.firstChild) {
