@@ -1,0 +1,15 @@
+#logo {
+    height: 50px;
+}
+
+#btn-more {
+    background-color: darkgreen;
+    color: white;
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+#btn-more:hover {
+    font-size: 110%;
+    background-color: gray;
+}
