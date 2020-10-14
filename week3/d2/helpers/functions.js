@@ -1,21 +1,28 @@
-function addElement(container, element, props, callback) {
+/**
+ * Creates new element, adds it to the relevant position and returns the new element
+ * parent: parent element
+ * element: new element
+ * attributes: properties of new elemenet
+ */
+
+const addElement = function (parent, element, attributes, callback) {
     let newElement = document.createElement(element);
-    let attributesPassed = false;
-    if (props.label) {
+
+    if (attributes.label) {
         let div = document.createElement("div");
         let label = document.createElement("label");
-        label.innerText = props.label;
-        div.appendChild(label);
-        container.appendChild(div);
+
+        label.innerText = attributes.label
+
+        div.appendChild(label)
+        parent.appendChild(div)
     }
-    Object.entries(props).map((entry) => {
+
+    Object.entries(attributes).map(entry => {
         if (entry[0] !== "label") {
-            newElement[entry[0]] = entry[1];
-            attributesPassed = true;
+            newElement[entry[0]] = entry[1]
         }
-    });
-    if (attributesPassed) {
-        container.append(newElement);
-    }
-    return newElement;
+    })
+    parent.appendChild(newElement)
+    return newElement
 }
