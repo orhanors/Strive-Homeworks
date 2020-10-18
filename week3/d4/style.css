@@ -1,3 +1,71 @@
-.nav-team{
-    text-align: center;
+body{
+    color:black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    
+    
+
+}
+
+.banner{
+    background: url("https://cdn.pixabay.com/photo/2020/10/11/20/15/floating-islands-5646926_960_720.jpg");
+    height:100vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    border-bottom: 4px solid rgb(139, 139, 139);
+}
+
+.banner::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom:0;
+    background: rgb(190,199,217);
+    background: linear-gradient(180deg, rgba(190,199,217,1) 0%, rgba(0,76,92,0) 47%, rgba(182,185,217,1) 100%);
+}
+
+.banner .navbar{
+    margin-top:4%;
+}
+
+.banner .navbrand{
+    color:white;
+    font-size: 1.8em;
+    font-weight: bolder;
+}
+
+.banner .navbar li a{
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(70, 70, 70);
+
+}
+
+.banner .navbar li a:hover{
+    font-size: x-large;
+}
+
+.head{
+    margin-top: 12%;
+    transform: translateY();
+    font-size: xx-large;
+    font-weight: bolder;
+    /* position: relative; */
+    color: rgb(53, 53, 53);
+    
+}
+
+.head .btn{
+    /* position: absolute; */
+    margin-left: 35%;
+    font-size: xx-large;
+   
+
+}
+
+.head p{
+    color:oldlace;
 }

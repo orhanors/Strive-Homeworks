@@ -1,84 +1,139 @@
-<!doctype html>
-<!--
-    WELCOME TO THE STRIVE TEAM GENERATOR!
-    The app is pretty straight forward, use Bootstrap to add the following features:
-    - The user can add a list of names
-    - The user can set the number of teams
-    - Every time the user clicks on the "assign" button, a random name is placed in a team and removed from the list
-    - Each team should be inside a "column"
-    - [EXTRA] Create a button to remove an user from a team, putting him back in the main list
-    - [EXTRA] Create a button to reset the state of the app
--->
+<!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>TeamWork</title>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
     <script src="app.js"></script>
-
+    <script src="helpers/function.js"></script>
   </head>
   <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark  nav-team">
-        <a class="navbar-brand " href="#">You are not alone</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </nav>
-
-    <div class="container">
-        <div class="form-group">
-            <label for="username"> Add an alone human being</label>
-            <input type="text" class="form-control" id="username" placeholder="Name...">
+    <header>
+      <div class="container-fluid banner">
+        <div class="row">
+          <div class="col">
+            <nav class="navbar navbar-expand-mg">
+              <div class="navbrand">G-Team</div>
+              <ul class="nav">
+                <li class="nav-item">
+                  <a href="" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#addSingle" class="nav-link">Add Single</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#addSingle" class="nav-link">Add Group</a>
+                </li>
+                <li class="nav-item">
+                  <a href="" class="nav-link">About</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
-        <div class="addUserSingle">
-            <input class="btn btn-primary" id="singleAdd" type="button" value="+Single">
+        <div class="row head">
+          <div class="col-md-6 offset-md-3">
+            <h1 class="text-center display-2">Team Generator</h1>
+            <p class="text-center">Create Random Teams</p>
+            <a href="#addSingle" class="btn btn-danger">Get Started</a>
           </div>
-        <div class="form-group">
-            <label for="addList">Add a list</label>
-            <textarea class="form-control" id="addList" rows="8"></textarea>
-          </div>
-          <div class="addUserGroup">
-            <input class="btn btn-primary" type="button" value="+Group">
-          </div>
+        </div>
+      </div>
+    </header>
 
+    <!-- Add Single Member -->
+    <section>
+      <div class="jumbotron">
+        <a id="addSingle" href=""></a>
+        <h1 class="display-4 text-center">Add Member</h1>
+        <p class="lead text-center">Add single or group element</p>
+        <hr class="my-2" />
 
-        <div class="form-group">
-            <label for="teamSizeSelect">Team Size</label>
-            <select class="form-control" id="teamSizeSelect">
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div> 
-          <div class="addUserGroup">
-            <input class="btn btn-primary" type="button" value="Assign">
-          </div>        
-    </div>
-    
-       
-    <div class="container">
-            <ul id="showList">
-                
+        
+          <div class="row">
+            <div class="col-md-4 offset-4 mb-3">
+              <select class="custom-select" id="teamSize">
+                <option selected>Team Size...</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <div class="col-md-4 offset-4">
+              <div class="input-group mb-3">
+                <input
+                  id="singleInput"
+                  type="text"
+                  class="form-control"
+                  placeholder="single name"
+                  aria-describedby="button-addon2"
+                />
+                <div class="input-group-append">
+                  <button class="btn btn-danger" type="button" id="btn-single">
+                    Add Member
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 offset-4">
+              <div class="input-group">
+                <textarea
+                  id="groupInput"
+                  class="form-control"
+                  aria-label="With textarea"
+                  placeholder="name1,name2,name3..."
+                ></textarea>
+                <div class="input-group-append">
+                  <button class="btn btn-danger" type="button" id="btn-group">
+                    Add Group
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <!-- User List -->
+
+        <div class="row single-members">
+          <div class="col">
+            <ul id="singleUserList">
+
             </ul>
-    </div>
-    
-    <div class="container" id="teams">
-        <div class="row teams-row"></div>
-        
-    </div>
-        
-
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
