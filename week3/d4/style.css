@@ -69,3 +69,7 @@ body{
 .head p{
     color:oldlace;
 }
+
+.card-title{
+    font-weight: bolder;
+}

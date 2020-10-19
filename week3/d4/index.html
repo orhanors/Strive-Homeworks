@@ -48,7 +48,7 @@
           <div class="col-md-6 offset-md-3">
             <h1 class="text-center display-2">Team Generator</h1>
             <p class="text-center">Create Random Teams</p>
-            <a href="#addSingle" class="btn btn-danger">Get Started</a>
+            <a href="#addSingle" class="btn btn-primary">Get Started</a>
           </div>
         </div>
       </div>
@@ -66,8 +66,8 @@
           <div class="row">
             <div class="col-md-4 offset-4 mb-3">
               <select class="custom-select" id="teamSize">
-                <option selected>Team Size...</option>
-                <option value="2">2</option>
+                
+                <option selected value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
@@ -105,19 +105,35 @@
               </div>
             </div>
           </div>
-        </div>
-          <!-- User List -->
-
-        <div class="row single-members">
-          <div class="col">
-            <ul id="singleUserList">
-
-            </ul>
+          <div class="assignButton text-center mt-3">
+            <button class="assingClick btn btn-success" type="button" id="btn-single">Assign</button>
           </div>
         </div>
-      </div>
+          <!-- User List -->
+        
+          
     </section>
 
+    <section id="teamMembers" class="container">
+          <h1 id="userListHead"></h1>
+          <div class="row no-gutters">
+            
+            <div class="col">
+              <ul class="no-gutters" id="singleUserList">
+  
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="teamCards" class="container">
+        <div class="row" id="teamMemberCards">
+          
+        </div>
+          
+        
+      </section>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
