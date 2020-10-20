@@ -84,7 +84,9 @@ const trimFirst50Char = function(charSize){
     let blogPostsFisrtP = document.querySelectorAll(".blog-post p:nth-of-type(2)") //first paragraphs
     
     for(let j=0;j<blogPostsFisrtP.length;j++){
-       
+        if(blogPostsFisrtP[j].innerText.length < charSize){
+            charSize = blogPostsFisrtP[j].innerText.length;
+        }
         for(let i = 0;i<charSize;i++){
             let text = blogPostsFisrtP[j].innerText;
             let new_text = text.replace(text.charAt(0),"") //charAt(0) bcz everytime last index will at first
