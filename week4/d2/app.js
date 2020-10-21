@@ -60,7 +60,7 @@ const changeBackgroundJumbotron = function(color){
 //Write a function to change the color of the main title
 const changeTitleColor = function(color){
     let title = document.querySelector(".jumbotron>div>h1")
-    title["style"] = `color: ${color}`
+    title["style"] = `color: ${color}` 
 }
 
 //Write a function to change the column size for post headings
@@ -104,7 +104,7 @@ const newBlogPost = function(title){
     let parent = document.querySelector("main div.col-md-8.blog-main")
     button.classList.remove("disabled")
 
-
+    
 
     button.addEventListener("click", ()=>{
         let newPost = addElement(parent,"div",{className:"blog-post",style:"color:green;margin-bottom-4px"})
@@ -136,7 +136,6 @@ const alertAuthor = function(){
         })
     }
 }
-
 
 
 

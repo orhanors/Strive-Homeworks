@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        
+      </div>
+    </div>
+    </nav>
+  </div>
+
+  <section class="container ex1">
+    <h1 class="text-center mt-4">Exercise 1</h1>
+    <p class="text-center">Recreate this table just using Bootstrap4 classes or styling, without adding / removing any DOM element</p>
+    <div class="row">
+      <div class="col-6 d-flex justify-content-center flex-column bg-success" style="border-right: 2px solid black;">
+        <p class="text-center">First Column<br>Height 400px;
+        <br>Green-ish background<br>Text Centered</p>
+      </div>
+      <div class="col-2 d-flex justify-content-end flex-column bg-primary">
+        <p>Second Column<br>Text To The bottom<br>
+        Bold, Blueish<br>
+        background</p>
+      </div>
+      <div class="col" style="color:black;background-color:yellow">
+          <div class="row ex1-third d-flex flex-column justify-content-between text-center" >
+              <div class="col-12" style="height:33%">Third Column Part1</div>
+              <div class="col-12 " style="height:100%">Third Column Part2</div>
+              <div class="col-12" style="height:100%">Third Column Part3</div>
+          </div>
+      </div>
+  </div>
+   
+  </section>
+
+  <section class="container ex2">
+    <h1 class="text-center mt-4">Exercise 2</h1>
+        <p class="text-center">Create a pricing table to sell your product! Classical, 3 card approach with <br>
+        pricing. This is a classical user/priced product, with new feature enabled for the<br> pro / enterprise version.</p>
+    <div class="row d-flex flex-row justify-content-between">
+      <div class="col col-12 col-md-6 col-lg-4 col-lg-3">
+        <div class="card text-center" style="width: 18rem;">
+          <div class="card-header mb-3">
+            Free
+          </div>
+          <p><span class="price mx-2">$0</span> / mo</p>
+          <p>10 users included<br>
+              2 GB of storage<br>
+              Email support<br>
+              Help center access</p>
+          <button type="button" class="btn btn-outline-primary m-3">Sign Up For Free</button>
+        </div>
+      </div>
+      <div class="col col-12 col-md-6 col-lg-4 col-lg-3">
+        <div class="card text-center" style="width: 18rem;">
+          <div class="card-header mb-3">
+            Pro
+          </div>
+          <p><span class="price mx-2">$15</span> / mo</p>
+          <p>20 users included<br>
+          10 GB of storage<br>
+          Priority email support<br>
+          Help center access</p>
+          <button class="btn btn-primary m-3" type="submit">Get Started</button>
+        </div>
+      </div>
+      <div class="col col-12 col-md-6 col-lg-4 col-lg-3">
+        <div class="card text-center" style="width: 18rem;">
+          <div class="card-header mb-3">
+            Enterprise
+          </div>
+          <p><span class="price mx-2">$29</span> / mo</p>
+          <p>30 users included<br>
+          15 GB of storage<br>
+          Phone and email support<br>
+          Help center access</p>  
+          <button class="btn btn-primary m-3" type="submit">Contact Us</button>                      
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container ex3">
+    <h1 class="text-center mt-4">Exercise 3</h1>
+        <p class="text-center">And this could be the "video" part of your website! Here you can add all the video content, displayed inside cards.</p>
+    <div class="row my-4">
+        <div class="col col-12 col-md-6 col-lg-4">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://via.placeholder.com/400x200" alt="Card image cap">
+            <div class="card-body">
+              
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="card-bottom d-flex justify-content-between align-items-center">
+                <div>
+                  <a href="#" class="btn btn-small btn-outline-dark">View</a>
+                  <a href="#" class="btn btn-small btn-outline-dark">Edit</a>
+                </div>
+                <div>
+                  <p class="text-right">9 mins</p>
+                </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="col col-12 col-md-6 col-lg-4">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://via.placeholder.com/400x200" alt="Card image cap">
+            <div class="card-body">
+              
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="card-bottom d-flex justify-content-between align-items-center">
+                <div>
+                  <a href="#" class="btn btn-small btn-outline-dark">View</a>
+                  <a href="#" class="btn btn-small btn-outline-dark">Edit</a>
+                </div>
+                <div>
+                  <p class="text-right">9 mins</p>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col col-12 col-md-6 col-lg-4">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://via.placeholder.com/400x200" alt="Card image cap">
+            <div class="card-body">
+              
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="card-bottom d-flex justify-content-between align-items-center">
+                <div>
+                  <a href="#" class="btn btn-small btn-outline-dark">View</a>
+                  <a href="#" class="btn btn-small btn-outline-dark">Edit</a>
+                </div>
+                <div>
+                  <p class="text-right">9 mins</p>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row my-4">
+      <div class="col col-12 col-md-6 col-lg-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="https://via.placeholder.com/400x200" alt="Card image cap">
+          <div class="card-body">
+            
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="card-bottom d-flex justify-content-between align-items-center">
+                <div>
+                  <a href="#" class="btn btn-small btn-outline-dark">View</a>
+                  <a href="#" class="btn btn-small btn-outline-dark">Edit</a>
+                </div>
+                <div>
+                  <p class="text-right">9 mins</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col col-12 col-md-6 col-lg-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="https://via.placeholder.com/400x200" alt="Card image cap">
+          <div class="card-body">
+            
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="card-bottom d-flex justify-content-between align-items-center">
+                <div>
+                  <a href="#" class="btn btn-small btn-outline-dark">View</a>
+                  <a href="#" class="btn btn-small btn-outline-dark">Edit</a>
+                </div>
+                <div>
+                  <p class="text-right">9 mins</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col col-12 col-md-6 col-lg-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="https://via.placeholder.com/400x200" alt="Card image cap">
+          <div class="card-body">
+            
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="card-bottom d-flex justify-content-between align-items-center">
+                <div>
+                  <a href="#" class="btn btn-small btn-outline-dark">View</a>
+                  <a href="#" class="btn btn-small btn-outline-dark">Edit</a>
+                </div>
+                <div>
+                  <p class="text-right">9 mins</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="row my-4">
+    <div class="col col-12 col-md-6 col-lg-4">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://via.placeholder.com/400x200" alt="Card image cap">
+        <div class="card-body">
+          
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <div class="card-bottom d-flex justify-content-between align-items-center">
+                <div>
+                  <a href="#" class="btn btn-small btn-outline-dark">View</a>
+                  <a href="#" class="btn btn-small btn-outline-dark">Edit</a>
+                </div>
+                <div>
+                  <p class="text-right">9 mins</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="col col-12 col-md-6 col-lg-4">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://via.placeholder.com/400x200" alt="Card image cap">
+        <div class="card-body">
+          
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <div class="card-bottom d-flex justify-content-between align-items-center">
+                <div>
+                  <a href="#" class="btn btn-small btn-outline-dark">View</a>
+                  <a href="#" class="btn btn-small btn-outline-dark">Edit</a>
+                </div>
+                <div>
+                  <p class="text-right">9 mins</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="col col-12 col-md-6 col-lg-4">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://via.placeholder.com/400x200" alt="Card image cap">
+        <div class="card-body">
+          
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <div class="card-bottom d-flex justify-content-between align-items-center">
+                <div>
+                  <a href="#" class="btn btn-small btn-outline-dark">View</a>
+                  <a href="#" class="btn btn-small btn-outline-dark">Edit</a>
+                </div>
+                <div>
+                  <p class="text-right">9 mins</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+  </section>
+
+  <section class="container ex4">
+    <h2>Exercise 4</h2>
+    <p class="text-center">
+      Structure this section as a blog! Check the image and recreate as best
+      as you can!
+    </p>
+    <div class="d-flex justify-content-between">
+      <div>
+        <h3>Page Heading <small>Secondary Text</small></h3>
+        <div class="card card-margin save-me">
+          <img src="img/family-guy.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Donald & Peter</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis,
+              quisquam possimus? In, quo esse? Eum, in aperiam. Totam, libero.
+              Iusto quisquam eius dignissimos nulla, ab cupiditate accusamus
+              incidunt nam fugiat?
+            </p>
+            <a href="#" class="btn btn-primary">Read More &#8594; </a>
+          </div>
+        </div>
+        <h3>Page Heading <small>Secondary Text</small></h3>
+        <div class="card card-margin save-me">
+          <img src="img/family-guy.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Donald & Peter</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis,
+              quisquam possimus? In, quo esse? Eum, in aperiam. Totam, libero.
+              Iusto quisquam eius dignissimos nulla, ab cupiditate accusamus
+              incidunt nam fugiat?
+            </p>
+            <a href="#" class="btn btn-primary">Read More &#8594; </a>
+          </div>
+        </div>
+        <h3>Page Heading <small>Secondary Text</small></h3>
+        <div class="card card-margin save-me">
+          <img src="img/family-guy.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Donald & Peter</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis,
+              quisquam possimus? In, quo esse? Eum, in aperiam. Totam, libero.
+              Iusto quisquam eius dignissimos nulla, ab cupiditate accusamus
+              incidunt nam fugiat?
+            </p>
+            <a href="#" class="btn btn-primary">Read More &#8594;</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card bg-light mb-3" style="max-width: 18rem">
+          <div class="card-header">Find in my blog</div>
+          <div class="card-body bg-white">
+            <div class="input-group md-form form-sm form-2 pl-0">
+              <input
+                class="form-control my-0 py-1 amber-border"
+                type="text"
+                placeholder="Search for..."
+                aria-label="Search"
+              />
+              <div class="input-group-append">
+                <span
+                  class="input-group-text amber text-white bg-secondary rounded"
+                  id="basic-text1"
+                  ><i class="fas fa-search text-grey" aria-hidden="true"
+                    >Search</i
+                  ></span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card bg-light mb-3" style="max-width: 18rem">
+          <div class="card-header">Categories</div>
+          <div class="card-body bg-white d-flex flex-row">
+            <div>
+              <ul>
+                <li><a href="">Web Design</a></li>
+                <li><a href="">HTML</a></li>
+                <li><a href="">CSS</a></li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li><a href="">Javascript</a></li>
+                <li><a href="">SASS</a></li>
+                <li><a href="">Bootstrap4</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card bg-light mb-3" style="max-width: 18rem">
+          <div class="card-header">Widgets</div>
+          <div class="card-body bg-white">
+            <p class="card-text" style="color:gray">
+              Some quick example text to build on the card title and make up
+              the bulk of the card's content.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="container ex5">
+    <h1 class="text-center">Exercise 5</h1>
+        <p class="pb-4 text-center">Footer time! Never underestimate the power of footer ;-)</p>
+        <hr class="pt-4">
+        <footer >
+            <div class="row">
+                <div class="col text-align-center">
+                    <p><span>Features</span><br>
+                    Cool stuff<br>Random feature<br>
+                    Team feature<br>Stuff for developwers<br>
+                    Another one<br>Last time
+                    </p>
+                </div>
+                <div class="col">
+                    <p><span>Resources</span><br>
+                        Resource<br>Resource name<br>
+                        Another reource<br>Final resource
+                        </p>
+                </div>
+                <div class="col">
+                    <p><span>About</span><br>
+                        Team<br>Locations<br>
+                        Privacy<br>
+                        Terms
+                        </p>
+                </div>
+            </div>
+        </footer>
+  </section>
+  
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
