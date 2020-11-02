@@ -189,11 +189,14 @@ const chunk = function(array,chunkSize){
             let subArr = []
     
             for(let j=0;j<chunkSize;j++){
-               
-                subArr.push(array[0])
-                array.shift()
+                
+                if(array[0] !== undefined){
+                    subArr.push(array[0])
+                    array.shift()
+                }
+                
             }
-            
+
             newArray.push(subArr)
             subArr = []
         }
