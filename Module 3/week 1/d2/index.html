@@ -1,115 +1,193 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<title>Title</title>
-		<!-- Required meta tags -->
-		<meta charset="utf-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1, shrink-to-fit=no"
-		/>
+  <head>
+    <title>Spotify</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<!-- Bootstrap CSS -->
-		<link
-			rel="stylesheet"
-			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-			crossorigin="anonymous"
-		/>
-        
-        <link rel="stylesheet" href="./css/style.css">
-	</head>
-	<body>
-		<header>
-			<div class="container-fluid banner">
-				<div class="row">
-					<div class="col">
-						<nav class="navbar navbar-expand-mg mt-5">
-							<ul class="nav">
-								<li class="nav-item">
-									<a href="" class="nav-link">Home</a>
-								</li>
-								<li class="nav-item">
-									<a href="#addSingle" class="nav-link"
-										>Add Single</a
-									>
-								</li>
-								<li class="nav-item">
-									<a href="#addSingle" class="nav-link"
-										>Add Group</a
-									>
-								</li>
-								<li class="nav-item">
-									<a href="" class="nav-link">About</a>
-								</li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-				<div class="row head">
-					<div class="col-md-6 offset-md-3">
-						<div class="sticky-header">
-							<h1 class="text-center display-2">
-								Socrates <span>music</span>
-							</h1>
-						</div>
+    <!-- Bootstrap CSS -->
+    <link href="//db.onlinewebfonts.com/c/02d8f1743ede250c7c9865f1574d7cc6?family=Circular+Book" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css">
+    
+   
+    
+  </head>
+  <body>
+    
+      
+        <div class="container-fluid">
+            <div class="row">
+                <div id="sidebar" class="col-2 d-flex flex-column justify-content-between">
+                    <div class="sidebar-top d-lg-block d-md-flex flex-column justify-content-between">
+                        <a class="d-none d-md-block mt-4" href=""><img id="logo" src="" alt=""></a>
+                        <a href="./index.html">
+                        <div class="sidebar-top-text mt-5 mt-lg-0">
+                          <svg class="mr-2" viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 256.274 60.84 L 84.324 166.237 L 84.324 443.063 L 193.27 443.063 L 193.27 293.73 L 320.228 293.73 L 320.228 443.063 L 428.222 443.063 L 428.222 165.476 L 256.274 60.84 Z M 256.274 35.95 L 448.452 149.145 L 448.452 464.395 L 300 464.395 L 300 315.062 L 213.499 315.062 L 213.499 464.395 L 64.095 464.395 L 64.095 150.161 L 256.274 35.95 Z" fill="currentColor"></path>
+                        </svg>
+                            <h5 class="d-none d-md-block">Home</h5>
+                        </div>
+                      </a>
+                        <a href="./pages/artist.html">
+                        <div class="sidebar-top-text">
+                          <svg class="mr-2" viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M349.714 347.937l93.714 109.969-16.254 13.969-93.969-109.969q-48.508 36.825-109.207 36.825-36.826 0-70.476-14.349t-57.905-38.603-38.603-57.905-14.349-70.476 14.349-70.476 38.603-57.905 57.905-38.603 70.476-14.349 70.476 14.349 57.905 38.603 38.603 57.905 14.349 70.476q0 37.841-14.73 71.619t-40.889 58.921zM224 377.397q43.428 0 80.254-21.461t58.286-58.286 21.461-80.254-21.461-80.254-58.286-58.285-80.254-21.46-80.254 21.46-58.285 58.285-21.46 80.254 21.46 80.254 58.285 58.286 80.254 21.461z" fill="currentColor" fill-rule="evenodd"></path>
+                        </svg>
+                            <h5 class="d-none d-md-block">Search</h5>
+                        </div>
+                      </a>
+                      <a href="./pages/album.html">
+                        <div class="sidebar-top-text">
+                            <svg class="mr-2" viewBox="0 0 512 512" width="24" height="24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path class="mr-2"
+                                d="M291.301 81.778l166.349 373.587-19.301 8.635-166.349-373.587zM64 463.746v-384h21.334v384h-21.334zM192 463.746v-384h21.334v384h-21.334z"
+                                fill="currentColor"></path>
+                        </svg>
+                            <h5 class="d-none d-md-block">Your Library</h5>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="sidebar-middle d-none d-lg-block d-md-flex flex-column justify-content-between">
+                      <h5 class="d-none d-md-block mt-5">Playlist</h5>
+                      <div id="findUnique" class="create-playlist mt-3 d-flex flex-row">
+                        <div class="create-icon text-center">
+                          <i class="mt-2 fas fa-plus" style="color:black"></i>
+                        </div>
+                        <p class="ml-2 mt-1">Count Unique</p>
                         
-                            <input style="width: 100px;" class="form-control mr-sm-2" id="searchInput" placeholder="Search">
-                            <button id="searchBtn" class="btn btn-outline-success my-2 my-sm-0" >Search</button>
-						
-					</div>
-				</div>
-			</div>
-		</header>
-		<section  class="page container-fluid favorites">
-			<h1 class="text-center my-5 sticky-top">LEGENDS ♥‿♥</h1>
-			<div class="row d-flex justify-content-center">
-				<div class="hide col-12 col-md-3 col-lg-2">
-					<div
-						class=" card text-white bg-dark mb-3 shadow-lg shadow-lg"
-						style="max-width: 18rem"
-					>
-						<img
-							src=""
-							class="card-img-top"
-							alt="..."
-						/>
-						<div class="card-header">Header</div>
-						<div class="card-body">
-							<h5 class="card-title">Dark card title</h5>
-							<p class="card-text">
-								Some quick example text to build on the card
-								title and make up the bulk of the card's
-								content.
-							</p>
-						</div>
-					</div>
+                        
+                      </div>
+
+                      <div class="create-playlist mt-1 d-flex flex-row">
+                        <div class="create-icon2 text-center">
+                          <i class="mt-2 fas fa-heart"></i>
+                        </div>
+                        <p id="likedPage" class="ml-2 mt-1">Liked Songs</p>
+                      </div>
+                      <hr size="4" width="" color="gray">  
+
+                      <div class="add-playlist d-flex flex-column overflow-auto">
+                        <ul class="new-track-list">
+                            <li>Summer Rewind</li>
+                            <li>Best Jazz</li>
+                            <li>Hip-hop</li>
+                            <li>Chill</li>
+                            <li>Romance</li>
+                            <li>Freedom</li>
+                        </ul>
+                        
+                      </div>
+                      
+                    </div>
+                    <div class="sidebar-top-text d-none d-lg-block d-md-flex flex-column mt-5">
+                      <svg role="img" height="24" width="24" viewBox="0 0 24 24" class="mr-2">
+                        <path
+                            d="M11.5 0C5.149 0 0 5.148 0 11.5 0 17.851 5.149 23 11.5 23S23 17.851 23 11.5C23 5.148 17.851 0 11.5 0zm0 22C5.71 22 1 17.29 1 11.5S5.71 1 11.5 1 22 5.71 22 11.5 17.29 22 11.5 22zm.499-6.842V5h-1v10.149l-3.418-3.975-.758.652 4.678 5.44 4.694-5.439-.757-.653-3.439 3.984z"
+                            fill="currentColor">
+                        </path>
+                    </svg> Install App
+                    </div>
                 </div>
+                           
+                <div id="mainpage" class="col-10">
+                
+                    <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
+                          <button style="margin-left: 90%;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                          <div class="collapse navbar-collapse"
+                              id="collapsibleNavId" style="margin-left: 30%;">
+                            <ul class="navbar-nav ml-5">
+                              <li class="nav-item active">
+                                <a class="nav-link hvr-underline-from-center mx-0 mx-sm-2 mx-md-3" href="#">TRENDING</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link hvr-underline-from-center mx-0 mx-sm-2 mx-md-3" href="#">PODCAST</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link hvr-underline-from-center mx-0 mx-sm-2 mx-md-3" href="#">MOODS AND GENRES</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link hvr-underline-from-center mx-0 mx-sm-2 mx-md-3" href="#">NEW RELEASES</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link hvr-underline-from-center mx-0 mx-sm-2 mx-md-3" href="#">DISCOVER</a>
+
+                              </li>                           
+                              </li>
+                              
+                           </ul>
+                          </div>
+                       
+                    </nav>      
+                <div class="listBtn">
+                    <button id="listAlbums" type="button" class="btn btn-light">Albums</button>
+                </div>  
+                
+                
+               
+                  <section class="eminem container hide">
+                    <div class="section-title">
+                        <h3 class="my-4 display-3">Eminem</h3>
+                    </div>
+
+                    <div class="row">
+                        
+                    </div>
+                  </section>
+
+                  <section class="metallica container hide">
+                    <div class="section-title">
+                        <h3 class="my-4 display-3">Metallica</h3>
+                    </div>
+
+                    <div class="row">
+                        
+                    </div>
+                  </section>
+
+                  <section class="behemoth container hide">
+                    <div class="section-title">
+                        <h3 class="my-4 display-3">Behemoth</h3>
+                    </div>
+
+                    <div class="row">
+                        
+                    </div>
+                  </section>
+
+                  
+                      
+              
+
+              
+
+                </div>
+            
             </div>
-		</section>	
+      
+        </div>
+       
+       
 
-		
 
-		
+    
+    <script src="./js/app.js"></script>
+   
+    <!-- Font Awesome -->
+    <script
+      src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
+      data-auto-a11y="true"
+    ></script>
 
-        <script src="./js/function.js"></script>
-        <script src="./js/app.js"></script>
-		<!-- Optional JavaScript -->
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script
-			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-			crossorigin="anonymous"
-		></script>
-	</body>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 </html>

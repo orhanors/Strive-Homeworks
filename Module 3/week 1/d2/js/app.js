@@ -1,77 +1,91 @@
-window.onload = function(){
+let headers = {
+	"x-rapidapi-key": "91cbdcb779mshb25e7872769b4fcp110c07jsnbcf1d17bc30b",
+	"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+};
+
+let allAlbums = { eminem: [], metallica: [], behemoth: [] };
+
+
+const generateCard = function (albumInfo) {
+	return `<div class="col col-12 col-sm-6 col-md-4 col-lg-2 ">
+
+                <div class="card ${albumInfo.album.id}">   
+                    <img src="${albumInfo.album.cover_medium}" class="card-img-top card-brdr-bl" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">${albumInfo.title_short}</h5>
+                
+                    </div>
+                </div>
+            </div>`;
+};
+
+const addCardToPage = function(){
+    let eminemSection = document.querySelector(".eminem .row")
+    addCardToSection(eminemSection,allAlbums.eminem)
+
+    let metallicaSection = document.querySelector(".metallica .row")
+    addCardToSection(metallicaSection,allAlbums.metallica)
+
+    let behemothSection = document.querySelector(".behemoth .row")
+    addCardToSection(behemothSection,allAlbums.behemoth)
+}
+
+const addCardToSection = function(section,album){
     
-    showData()
-    let btn = document.querySelector("#searchBtn")
-    btn.addEventListener("click",fetchData)
-    // fetchData()
+    for(let i=0;i<album.length;i++) {
+        
+        let newCard = generateCard(album[i])
+        section.innerHTML += newCard
+    }   
+        
     
 }
 
-const showData = function(){
-    fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "91cbdcb779mshb25e7872769b4fcp110c07jsnbcf1d17bc30b",
-		"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
-	}
+  
+const findUniqueAlbums = function(){
+    
+    let uniqueClassNames = []
+    
+    let allCards = document.querySelectorAll(".card")
+    
+    for(let card of allCards){
+        if(!(uniqueClassNames.includes(card.classList))){
+            uniqueClassNames.push(card.classList)
+        }
+    }
+    alert("There are "+uniqueClassNames.length+" unique albums")
+   
+}
+window.onload = function () {
+	let artists = ["eminem", "metallica", "behemoth"];
+
+	for (let artistName of artists) {
+		fetch(
+			`https://deezerdevs-deezer.p.rapidapi.com/search?q=${artistName}`,
+			{ method: "GET", headers }
+		)
+			.then((response) => response.json())
+			.then((artistData) => {
+				allAlbums[artistName] = artistData.data;
+			})
+			.catch((error) => console.log(error));
+    }
+    
+
+   
+    let allSections = document.querySelectorAll("section")
+
+    let showAlbumBtn = document.querySelector("#listAlbums")
+    showAlbumBtn.addEventListener("click",(e) => {
+        addCardToPage()
+        for(let section of allSections){
+            section.classList.remove("hide")
+            e.target.classList.add("hide")
+        }
     })
-    .then(response => response.json())
-    .then(result => result.data)
-    .then(data => console.log(data))
-}
 
-const createCollection = function(){
-    let section = document.querySelector("section");
 
-    let newSection = section.cloneNode(true)
-    // newSection.querySelector("h1").innerText = fetchData.artist.name;
-    newSection.classList.remove("hide")
-    document.querySelector("body").append(newSection)
-}
+    let btn = document.querySelector("#findUnique")
+    btn.addEventListener("click",findUniqueAlbums)
 
-const getRelatedData = function(fetchData){
-
-    
-    let img = fetchData.album.cover_medium;
-    // let albumName = 
-    let subHeader = fetchData.artist.name;
-    let header = fetchData.title_short;
-    // let overview = fetchData.
-    let albumCard = newCard(img,subHeader,header)
-    
-    document.querySelector("section .row").append(albumCard)
-    
-}
-const fetchData = function(){
-    
-    let input = document.querySelector("#searchInput")
-    
-    
-    fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${input.value}`, {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "91cbdcb779mshb25e7872769b4fcp110c07jsnbcf1d17bc30b",
-		"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
-	}
-    })
-    .then(response => response.json())
-    .then(result => result.data)
-    .then(data => {
-        data.forEach((index) => {getRelatedData(index)})
-    })
-}
-
-/**
- * Clones the sample card inside of the HTML and returns this cloned card
- */
-const newCard = function(img,subHeader,header){
-    let sampleCard = document.querySelector("section .col-12");
-    let newCard = sampleCard.cloneNode(true);
-    newCard.classList.remove("hide")
-    newCard.querySelector("img")["src"] = img;
-    newCard.querySelector(".card-title").innerText = subHeader;
-    newCard.querySelector(".card-header").innerText = header;
-    
-    // newCard.querySelector(".card-text").innerText = overview;
-    return newCard;
-}
+};
