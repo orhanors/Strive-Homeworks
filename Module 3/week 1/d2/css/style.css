@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Fredoka+One&display=swap');
+
+
+body{
+    background-color: rgba(0, 0, 0, 0.959);
+}
+
+.hide{
+    display: none !important;
+}
+/* Header
+-------------------------> */
+.banner{
+    font-family: 'Fredoka One', cursive;
+    border-bottom: 5px solid rgba(0, 0, 0, 0.76) ;
+    font-size:1.8rem;
+    background-image: url("https://cdn.pixabay.com/photo/2017/03/09/20/53/microphone-2130806_960_720.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width:100%;
+    position: relative;
+}
+
+.banner::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(65,65,65);
+    background: linear-gradient(180deg, rgba(65,65,65,1) 0%, rgba(0,0,0,0) 47%, rgba(0,0,0,0.8936449579831933) 100%, rgba(78,78,78,1) 100%);
+    
+}
+.head h1, .head p{
+    color:rgb(253, 167, 7);
+}
+.head h1{
+    color:rgb(243, 175, 49);
+    font-size: 6.5rem;
+}
+.banner ul li a {
+    color:rgba(0, 0, 0, 0.678)
+}
+
+.banner ul li a:hover{
+    font-size: 2.1rem;
+    color: rgb(253, 167, 7);
+}
+
+.head{
+    margin-top: 8%;
+    transform: translateY();
+    font-size: xx-large;
+    font-weight: bolder;
+    /* position: relative; */
+    color: rgb(53, 53, 53);
+    
+}
+
+.head .btn{
+    /* position: absolute; */
+   
+   
+   
+
+}
+
+.sticky-header{
+    position: sticky;
+    top: 0;
+    padding: 2rem;
+}
+
+.card {
+    display: flex;
+    height: 50%;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.952) !important;
+    border-radius: 10px;
+    box-shadow: -1rem 0 3rem #000;
+  /*   margin-left: -50px; */
+    transition: 0.4s ease-out;
+    position: relative;
+    left: 0px;
+    overflow: hidden;
+  }
+  
+  .card:not(:first-child) {
+      margin-left: -50px;
+  }
+  
+  .card:hover {
+    background-color: rgb(250, 162, 0) !important;
+    height: 100%;
+    transform: translateY(-20px);
+    transition: 0.4s ease-out;
+  }
+  
+  .card:hover ~ .card {
+    position: relative;
+    left: 50px;
+    transition: 0.4s ease-out;
+  }
+
+  .container {
+    position: absolute;
+    height: 300px;
+    width: 600px;
+    top: 60px;
+    left: calc(50% - 300px);
+    display: flex;
+  }
+
+  section>h1{
+      background-color: #0A0A0A; 
+      color: white;
+      font-family: 'Fredoka One', cursive;
+
+  }
+
+  .images img{
+      margin-right: 3rem;
+      border-radius: 8px;
+    width: 50%;
+    height: auto;
+  }
