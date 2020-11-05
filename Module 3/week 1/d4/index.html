@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Albums</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-auto-replace-svg="nest"></script>
+</head>
+  <body>
+      
+    <header>
+      <div class="container-fluid banner">
+				<div class="row">
+					<div class="col">
+						<nav class="navbar navbar-expand-mg mt-5 d-flex justify-content-center">
+							<ul class="nav ">
+								<li class="nav-item">
+									<a href="#" class="nav-link">Home</a>
+								</li>
+								<li class="nav-item">
+									<a href="#products" class="nav-link"
+										>Products</a
+									>
+								</li>
+								<li class="nav-item">
+									<a href="#card" class="nav-link"
+										>Card</a
+									>
+								</li>
+								<li class="nav-item">
+									<a href="" class="nav-link">About</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+        <div class="container">
+            <svg id="logo" width="500" height="76" viewBox="0 0 500 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50.424 23.808C50.232 23.552 49.56 23.072 48.408 22.368C47.256 21.664 45.816 20.928 44.088 20.16C42.36 19.328 40.472 18.656 38.424 18.144C36.376 17.568 34.328 17.28 32.28 17.28C26.648 17.28 23.832 19.168 23.832 22.944C23.832 25.248 25.048 26.88 27.48 27.84C29.976 28.8 33.528 29.952 38.136 31.296C42.488 32.512 46.232 33.92 49.368 35.52C52.568 37.056 55.032 39.136 56.76 41.76C58.488 44.32 59.352 47.712 59.352 51.936C59.352 55.776 58.648 59.04 57.24 61.728C55.832 64.352 53.912 66.496 51.48 68.16C49.048 69.76 46.296 70.944 43.224 71.712C40.216 72.416 37.08 72.768 33.816 72.768C28.76 72.768 23.64 72.032 18.456 70.56C13.272 69.024 8.696 66.944 4.728 64.32L11.64 50.592C11.896 50.912 12.728 51.52 14.136 52.416C15.544 53.248 17.304 54.144 19.416 55.104C21.528 56.064 23.832 56.896 26.328 57.6C28.888 58.24 31.48 58.56 34.104 58.56C39.672 58.56 42.456 56.864 42.456 53.472C42.456 51.744 41.72 50.4 40.248 49.44C38.84 48.416 36.888 47.552 34.392 46.848C31.896 46.08 29.08 45.216 25.944 44.256C19.672 42.336 15.032 40 12.024 37.248C9.08 34.496 7.608 30.56 7.608 25.44C7.608 20.64 8.728 16.608 10.968 13.344C13.272 10.016 16.344 7.52 20.184 5.856C24.024 4.128 28.216 3.264 32.76 3.264C37.56 3.264 42.104 4.096 46.392 5.76C50.68 7.36 54.328 9.024 57.336 10.752L50.424 23.808Z" stroke="#FEFEFE" stroke-width="6" mask="url(#path-1-outside-1)"/>
+                <path d="M98.4465 72.576C93.3905 72.576 88.7825 71.616 84.6225 69.696C80.5265 67.712 76.9745 65.088 73.9665 61.824C70.9585 58.496 68.6545 54.784 67.0545 50.688C65.4545 46.528 64.6545 42.24 64.6545 37.824C64.6545 33.344 65.4865 29.056 67.1505 24.96C68.8785 20.8 71.2465 17.12 74.2545 13.92C77.3265 10.656 80.9425 8.096 85.1025 6.24C89.2625 4.384 93.8065 3.456 98.7345 3.456C103.791 3.456 108.367 4.448 112.463 6.432C116.623 8.352 120.174 10.976 123.118 14.304C126.126 17.632 128.431 21.376 130.031 25.536C131.631 29.632 132.431 33.824 132.431 38.112C132.431 42.592 131.567 46.912 129.839 51.072C128.174 55.168 125.807 58.848 122.735 62.112C119.727 65.312 116.143 67.872 111.983 69.792C107.887 71.648 103.375 72.576 98.4465 72.576ZM80.6865 38.016C80.6865 41.536 81.3585 44.864 82.7025 48C84.0465 51.072 86.0625 53.6 88.7505 55.584C91.4385 57.568 94.7025 58.56 98.5425 58.56C102.511 58.56 105.807 57.536 108.431 55.488C111.119 53.44 113.103 50.848 114.382 47.712C115.727 44.512 116.399 41.216 116.399 37.824C116.399 34.304 115.694 31.008 114.286 27.936C112.942 24.8 110.927 22.272 108.239 20.352C105.615 18.432 102.383 17.472 98.5425 17.472C94.5745 17.472 91.2465 18.496 88.5585 20.544C85.9345 22.528 83.9505 25.088 82.6065 28.224C81.3265 31.36 80.6865 34.624 80.6865 38.016Z" stroke="#FEFEFE" stroke-width="6" mask="url(#path-1-outside-1)"/>
+                <path d="M137.592 37.344C137.592 33.248 138.36 29.184 139.896 25.152C141.432 21.12 143.672 17.472 146.616 14.208C149.56 10.944 153.144 8.352 157.368 6.432C161.592 4.448 166.392 3.456 171.768 3.456C178.104 3.456 183.64 4.832 188.376 7.584C193.112 10.336 196.632 13.92 198.936 18.336L186.84 26.784C185.816 24.416 184.44 22.56 182.712 21.216C180.984 19.808 179.128 18.848 177.144 18.336C175.16 17.76 173.24 17.472 171.384 17.472C167.352 17.472 164.024 18.496 161.4 20.544C158.776 22.592 156.824 25.184 155.544 28.32C154.264 31.456 153.624 34.656 153.624 37.92C153.624 41.504 154.36 44.896 155.832 48.096C157.304 51.232 159.384 53.76 162.072 55.68C164.76 57.6 167.928 58.56 171.576 58.56C173.496 58.56 175.448 58.272 177.432 57.696C179.416 57.056 181.24 56.032 182.904 54.624C184.632 53.216 185.944 51.392 186.84 49.152L199.704 56.736C198.36 60.128 196.152 63.008 193.08 65.376C190.008 67.68 186.52 69.472 182.616 70.752C178.776 71.968 174.968 72.576 171.192 72.576C166.264 72.576 161.752 71.584 157.656 69.6C153.56 67.552 150.008 64.864 147 61.536C143.992 58.144 141.656 54.368 139.992 50.208C138.392 45.984 137.592 41.696 137.592 37.344Z" stroke="#FEFEFE" stroke-width="6" mask="url(#path-1-outside-1)"/>
+                <path d="M207.622 72V3.84H238.342C241.542 3.84 244.486 4.512 247.174 5.856C249.926 7.136 252.294 8.896 254.278 11.136C256.262 13.312 257.798 15.776 258.886 18.528C260.038 21.28 260.614 24.064 260.614 26.88C260.614 31.104 259.59 35.008 257.542 38.592C255.558 42.112 252.87 44.8 249.478 46.656L264.454 72H247.078L234.022 50.016H223.366V72H207.622ZM223.366 36.288H237.766C239.622 36.288 241.222 35.424 242.566 33.696C243.91 31.904 244.582 29.632 244.582 26.88C244.582 24.128 243.814 21.92 242.278 20.256C240.742 18.528 239.078 17.664 237.286 17.664H223.366V36.288Z" stroke="#FEFEFE" stroke-width="6" mask="url(#path-1-outside-1)"/>
+                <path d="M289.118 3.84H306.11L329.534 72H313.406L308.126 56.736H286.91L281.726 72H265.598L289.118 3.84ZM305.534 45.888L297.566 19.68L289.406 45.888H305.534Z" stroke="#FEFEFE" stroke-width="6" mask="url(#path-1-outside-1)"/>
+                <path d="M381.808 17.664H361.072V72H345.328V17.664H324.496V3.84H381.808V17.664Z" stroke="#FEFEFE" stroke-width="6" mask="url(#path-1-outside-1)"/>
+                <path d="M437.401 58.176V72H389.497V3.84H436.537V17.664H405.241V30.912H432.121V43.68H405.241V58.176H437.401Z" stroke="#FEFEFE" stroke-width="6" mask="url(#path-1-outside-1)"/>
+                <path d="M487.862 23.808C487.67 23.552 486.997 23.072 485.845 22.368C484.693 21.664 483.254 20.928 481.526 20.16C479.798 19.328 477.91 18.656 475.862 18.144C473.814 17.568 471.765 17.28 469.717 17.28C464.085 17.28 461.27 19.168 461.27 22.944C461.27 25.248 462.486 26.88 464.918 27.84C467.414 28.8 470.966 29.952 475.574 31.296C479.926 32.512 483.67 33.92 486.806 35.52C490.006 37.056 492.47 39.136 494.198 41.76C495.926 44.32 496.789 47.712 496.789 51.936C496.789 55.776 496.085 59.04 494.677 61.728C493.269 64.352 491.35 66.496 488.918 68.16C486.486 69.76 483.733 70.944 480.661 71.712C477.653 72.416 474.518 72.768 471.254 72.768C466.198 72.768 461.077 72.032 455.893 70.56C450.709 69.024 446.133 66.944 442.165 64.32L449.078 50.592C449.334 50.912 450.165 51.52 451.573 52.416C452.981 53.248 454.742 54.144 456.854 55.104C458.966 56.064 461.27 56.896 463.766 57.6C466.326 58.24 468.918 58.56 471.542 58.56C477.11 58.56 479.893 56.864 479.893 53.472C479.893 51.744 479.157 50.4 477.685 49.44C476.277 48.416 474.325 47.552 471.829 46.848C469.333 46.08 466.518 45.216 463.382 44.256C457.109 42.336 452.469 40 449.461 37.248C446.517 34.496 445.046 30.56 445.046 25.44C445.046 20.64 446.165 16.608 448.405 13.344C450.709 10.016 453.781 7.52 457.621 5.856C461.461 4.128 465.654 3.264 470.198 3.264C474.998 3.264 479.541 4.096 483.829 5.76C488.118 7.36 491.765 9.024 494.773 10.752L487.862 23.808Z" stroke="#FEFEFE" stroke-width="6" mask="url(#path-1-outside-1)"/>
+                
+            </svg>
+            </div>       
+    </header>
+
+  
+ <section id ="products" class="container new-products mt-5">
+  <div class="container-fluid subHeader d-flex justify-content-between">
+   
+    <div class="total-card d-flex justify-content-center align-items-center mt-4 mr-3">
+      <i class="fas fa-shopping-cart fa-3x"></i>
+      <div id="size" class=""> </div>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+
+  </div>
+</section>
+
+
+<section id="card" >
+  <div class="container">
+    <table id="cart" class="table table-responsive">
+              <thead>
+              <tr class="names">
+                <th style="width:50%;height: 50%;">Product</th>
+                <th style="width:10%" class="text-right hidden-xs">Category</th>
+                
+                <th style="width:15%" class="text-right">Quantity</th>
+                <th style="width:10%" class="text-right hidden-xs">Price</th>
+                <th style="width:15%"> Remove</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="item hide">
+                <td data-th="Product">
+                  <div class="row">
+                    <div class="col-sm-3 hidden-xs"><img class="mt-5" style="width: 200px; height: 200px;" src="https://kickz.akamaized.net/en/media/images/p/600/converse-all_star_ox_canvas-bordeaux-3.jpg" alt="Converse" class="img-product img-responsive img-rounded"/></div>
+                    <div class="col-sm-9">
+                    <h4 class=" title">Converse All Star OX Canvas</h4>
+                      
+                    </div>
+                  </div>
+                </td>
+                <td id="categoryRow" data-th="Size" class="text-right hidden-xs">38</td>
+                
+                <td data-th="Quantity" class="text-right">
+                  1
+                  <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-sm btn-default">-</button>
+                    <button type="button" class="btn btn-sm btn-default">+</button>
+                  </div>
+                </td>
+
+                <td data-th="Price" class="priceRow text-right hidden-xs">$109.99</td>
+               
+
+                <td class="remove"> <button type="button" class="btn btn-danger">remove</button> </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td></td>
+                <td class="hidden-xs" colspan="1"></td>
+                <td class="text-right">Total</td>
+                <td id="totalPrice" class="text-right"><strong>$0</strong></td>
+                <td></td>
+              </tr>
+              <tr class="no-border">
+                <td><a href="#" class="btn btn-default "><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                <td colspan="2" class="hidden-xs"></td>
+                <td></td>
+                <td colspan="2"><button id="cleanCard" type="button" class="btn btn-warning">CleanCard</button></td>
+              </tr>
+            </tfoot>
+          </table>
+  </div>
+</section>
+    <script src="./js/animation.js"></script>
+    <script src="./js/app.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
+

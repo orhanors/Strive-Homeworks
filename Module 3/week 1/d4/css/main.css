@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(13, 14, 14);
+    color: rgb(185, 180, 180);
+}
+.hide{
+    display: none;
+}
+.banner ul li a {
+    color:rgba(0, 0, 0, 0.678)
+}
+
+.banner ul li a:hover{
+    font-size: 1.5rem;
+    color: rgb(253, 167, 7);
+}
+
+
+header{
+    background: url("../assets/header.jpg");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+header::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content:"";
+    background: rgb(193,149,37);
+    background: linear-gradient(0deg, rgba(193,149,37,0.6404761733795081) 0%, rgba(193,149,37,0) 100%); 
+}
+
+.subHeader{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+}
+
+.subHeader h2{
+    margin-top: 1rem;
+    font-family: 'Itim', cursive;
+    z-index: 1000;
+}
+
+/* SVG ANIMATION*/
+
+header .container{
+    width: 100vw;
+    height: 100vh;
+
+}
+
+#logo{    /*this is the centering using absolute positioning */
+    position: absolute;
+    left: 45%;
+    top: 60%;
+    transform: translate(-50%,-50%);
+    z-index: 100;
+}
+
+
+/* Delay and stroke-dasharray, stroke-dashoffset features initialized in JS file*/
+#logo path{  
+    animation: anim-line 2s ease forwards;
+}
+
+
+@keyframes anim-line{
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+
+/*Cards*/
+
+.card h5 {
+    color: black;
+}
+
+.card .price{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+    color: rgb(61, 60, 60);
+}
+
+.card .categoryContainer{
+    color: black;
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    border-radius: 5px;
+}
+
+.card .shopping{
+    background-color: rgb(20, 31, 36);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 12rem;
+    display: none !important;
+    z-index: -1;
+}
+
+.card .shopping:hover > *{
+    color: wheat;
+    cursor: pointer;
+}
+.card:hover .shopping{
+    display: flex !important;
+}
+
+.card .btn{
+    color: gray;
+    z-index: 1000;
+}
+
+
+.total-card{
+    background-color: transparent;
+    width: 100px;
+    height: 100px;
+
+    color: white;
+    border-radius: 40%;
+    position: relative;
+}
+
+#size{
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    position: absolute;
+    border-radius: 40%;
+    top: 0.5rem;
+    right: 0.5rem;
+    color: rgb(238, 127, 0);
+    display: none;
+    text-align: center;
+    font-weight: 900;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+
+/*TABLE*/
+
+section#card{
+    background-color: white;
+    margin-top: 5rem;
+}
+.table>thead>tr.names>th{
+  border-bottom: 1px;
+}
+.table>tbody>tr.item>td{
+  padding-bottom: 20px;
+  padding-top: 20px;
+  vertical-align: middle;
+}
+.table>tfoot>tr.no-border>td{
+  border-top: 0 none;
+  padding-top: 20px;
+}
+.img-product{
+  padding-top: 20px;
+}
+
+.table img{
+    margin-top: 2rem;
+}
