@@ -1,7 +1,7 @@
 let totalProduct = 0;
 let card = {}
 
-let shoppingCard = []
+// let shoppingCard = []
 let totalPrice = 0;
 
 const createTableRow = function(targetButton){
@@ -142,11 +142,15 @@ const addProductToCard = function(){
 
 
 
-const putCardToPage = function(){
+const putCardToPage = function(allCards){
     let section = document.querySelector("section .row")
-
-    for(let i=0;i<card.title.length;i++){
-         let newCard = createCard(card,i)
+    if(allCards.title){
+        size = allCards.title.length
+    }else{
+        size = allCards.length
+    }
+    for(let i=0;i<size;i++){
+         let newCard = createCard(allCards,i)
          section.innerHTML += newCard
     }
 }
@@ -159,12 +163,21 @@ const getFecth = function(url){
         card.img = data.map(cardImg => cardImg.img)
         card.price = data.map(cardPrice => cardPrice.price)
         card.category = data.map(cardCategory => cardCategory.category)
-        putCardToPage()
+        putCardToPage(card)
         addProductToCard()
         
     })
 }
 
+const search = function(){
+    let search = document.querySelector(".input-group input")
+
+    search.addEventListener("keyup",(e) =>{
+        let searchStr = e.target.value
+        let filtered = card.title.map(title => title.toLowerCase()).filter(book => book.includes(searchStr))
+        console.log(filtered)
+    })
+}
 
 
 window.onload = function(){
@@ -185,5 +198,6 @@ window.onload = function(){
         totalPriceText.innerText = totalPriceText.innerText.slice(0,4)
     })
     
+    search()
     
 }

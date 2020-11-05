@@ -84,6 +84,11 @@ header .container{
     }
 }
 
+
+input:hover{
+    background-color: orange;
+}
+
 /*Cards*/
 
 .card h5 {
