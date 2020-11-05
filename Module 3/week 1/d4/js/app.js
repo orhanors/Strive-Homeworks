@@ -49,17 +49,14 @@ const createCard = function(data,index){
             
             <div class="shopping d-flex justify-content-center align-items-center">
                 <button type="button" class="btn " data-toggle="modal" data-target="#exampleModal">
-                <i class="fas fa-shopping-cart fa-lg"></i>
+                Add
                 
-            </button
+            </button>
             </div>
         </div>
     </div>
       
-      <div class="card-body">
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
+      
     </div>
   </div>`
 }

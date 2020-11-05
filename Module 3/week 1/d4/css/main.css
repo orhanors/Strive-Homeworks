@@ -180,3 +180,7 @@ section#card{
 .table img{
     margin-top: 2rem;
 }
+
+.search{
+    z-index: 10000;
+}
