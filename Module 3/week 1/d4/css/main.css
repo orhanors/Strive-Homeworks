@@ -184,3 +184,11 @@ section#card{
 .search{
     z-index: 10000;
 }
+
+a>* {
+    color: white;
+}
+
+#totalPrice{
+    font-weight: bolder;
+}

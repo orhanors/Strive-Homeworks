@@ -3,6 +3,7 @@ let card = {}
 
 let shoppingCard = []
 let totalPrice = 0;
+
 const createTableRow = function(targetButton){
     
 
@@ -21,7 +22,7 @@ const createTableRow = function(targetButton){
     newItem.classList.remove("hide")
     tableBody.append(newItem)
 
-    let totalPriceText = document.querySelector("tfoot #totalPrice")
+    let totalPriceText = document.querySelector("tfoot #totalPrice strong")
     let cardPrice = card.querySelector(".price #productPrice").innerText
     
     cardPrice = Number(cardPrice)
@@ -60,6 +61,39 @@ const createCard = function(data,index){
     </div>
   </div>`
 }
+
+const removeElementFromCard = function(){
+    var parent = document.querySelector("tbody");
+
+    if (parent.addEventListener) {
+        parent.addEventListener('click', handler, false);
+    }else if (parent.attachEvent) {
+        parent.attachEvent('onclick', handler);
+    }
+
+    function handler(e) {
+        let tableRow = e.path[2] //it gives the event's table row element
+        console.log(tableRow)
+        let elementPrice = tableRow.querySelector(".priceRow")
+        elementPrice = elementPrice.innerText.slice(0,elementPrice.innerText.length-1)
+        elementPrice = Number(elementPrice)
+        totalPrice -= elementPrice
+        
+        let totalPriceText = document.querySelector("tfoot #totalPrice strong")
+        totalPriceText.innerText = totalPrice
+        
+        totalProduct -= 1
+        let totalProductText = document.querySelector("#size")
+        totalProductText.innerText = totalProduct
+        tableRow.classList.add("hide")
+        e.target["style"] = "display:none"
+    }
+ 
+    
+     
+    
+
+}
 const cleanCard = function(){
     let items = document.querySelectorAll("tbody tr")
     let allCards = document.querySelectorAll(".card-body")
@@ -72,13 +106,14 @@ const cleanCard = function(){
         card["style"] = "background-color:white"
     }
 
-    let totalPriceText = document.querySelector("tfoot #totalPrice")
+    let totalPriceText = document.querySelector("tfoot #totalPrice strong")
     totalPriceText.innerText = 0;
 
     totalProduct = 0;
 
     let totalText = document.querySelector("#size")
     totalText.innerText = ""
+    totalPrice = 0
 }
 const addProductToCard = function(){
     
@@ -98,17 +133,14 @@ const addProductToCard = function(){
 
 
            createTableRow(e.target)
+           
+           
         })
     }
     
 }
 
-const addShoppingTable = function(){
 
-    for(let card of shoppingCard){
-        // document.q
-    }
-}
 
 const putCardToPage = function(){
     let section = document.querySelector("section .row")
@@ -129,13 +161,14 @@ const getFecth = function(url){
         card.category = data.map(cardCategory => cardCategory.category)
         putCardToPage()
         addProductToCard()
+        
     })
 }
 
 
 
 window.onload = function(){
-    getLengthOfEachLetter()
+    getLengthOfEachLetter() //Animation function
 
     getFecth("https://striveschool-api.herokuapp.com/books")
     
@@ -143,6 +176,14 @@ window.onload = function(){
 
     cleanBtn.addEventListener("click",cleanCard)
     
-   
+    let tbody = document.querySelector("tbody")
+
+    removeElementFromCard()
+    
+    let totalPriceText = document.querySelector("tfoot #totalPrice strong")
+    totalPriceText.addEventListener("change",()=>{
+        totalPriceText.innerText = totalPriceText.innerText.slice(0,4)
+    })
+    
     
 }
