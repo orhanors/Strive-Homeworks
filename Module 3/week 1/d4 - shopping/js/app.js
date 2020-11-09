@@ -172,7 +172,7 @@ const getFecth = function(url){
 const search = function(){
     let search = document.querySelector(".input-group input")
 
-    search.addEventListener("keyup",(e) =>{
+    search.addEventListener("input",(e) =>{
         let searchStr = e.target.value
         let filtered = card.title.map(title => title.toLowerCase()).filter(book => book.includes(searchStr))
         console.log(filtered)
