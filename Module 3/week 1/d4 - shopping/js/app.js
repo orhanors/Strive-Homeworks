@@ -88,11 +88,6 @@ const removeElementFromCard = function(){
         tableRow.classList.add("hide")
         e.target["style"] = "display:none"
     }
- 
-    
-     
-    
-
 }
 const cleanCard = function(){
     let items = document.querySelectorAll("tbody tr")
