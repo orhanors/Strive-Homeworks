@@ -1,7 +1,10 @@
 let totalProduct = 0;
 let totalPrice = 0;
 
-//TODO: after searching it doenst add to card + (done: search funcion changed.It's resulting by DOM elem. instead of filteredArra)
+/**
+ * 
+ * @param {String} url Url for fetching 
+ */
 const getStore = async function(url){
     
     const headers = new Headers({
@@ -21,6 +24,11 @@ const getStore = async function(url){
         console.log(err)
     } 
 }
+
+/**
+ * Takes whole data array, generates cards and append them to the DOM
+ * @param {Array} arr Array of Objects
+ */
 const displayCards = function(arr){
     
     let cardContainer = document.getElementById("cardContainer")
@@ -32,6 +40,10 @@ const displayCards = function(arr){
 }
 
 
+/**
+ * Takes an object which represents single product and creates new Card according to the this object
+ * @param {Object} obj Single item object
+ */
 const generateCard = function(obj){
     return `<div id="cardCont" class="col-12 col-md-6 col-lg-3 mx-3 my-3 mx-md-3 my-md-3">
     <div class="card" style="width: 18rem;">
@@ -61,6 +73,10 @@ const generateCard = function(obj){
   </div>`
 }
 
+/**
+ * Takes an event button which is different for every product and generates a table row according to the related card info
+ * @param {Node} targetButton 
+ */
 const createTableRow = function(targetButton){
     
 
@@ -92,6 +108,9 @@ const createTableRow = function(targetButton){
 
 }
 
+/**
+ * Changes behavior of sticky shopping element
+ */
 const addProductToCard = function(){
     
     
@@ -116,7 +135,9 @@ const addProductToCard = function(){
     }
     
 }
-
+/**
+ * Removes spesific row from card and updates total price
+ */
 const removeElementFromCard = function(){
     var parent = document.querySelector("tbody");
 
@@ -145,7 +166,9 @@ const removeElementFromCard = function(){
     }
 }
 
-
+/**
+ * Cleans all the old behaviors and returns page the initial state
+ */
 const cleanCard = function(){
     let items = document.querySelectorAll("tbody tr")
     let allCards = document.querySelectorAll(".card-body")
@@ -168,26 +191,10 @@ const cleanCard = function(){
     totalPrice = 0
 }
 
-// const search = function(array){
-//     let searchBar = document.getElementById("searchBar")
 
-    
-//     searchBar.addEventListener("keyup",(e) => {
-//         let keyword = e.target.value;
-
-//         let filteredArray = array.filter(product =>{
-            
-//             return product.name.toLowerCase().includes(keyword) || product.brand.toLowerCase().includes(keyword)
-//         })
-//         console.log(filteredArray)
-//         cleanContainer()
-//         displayCards(filteredArray)
-//         addProductToCard()
-//     })
-
-  
-// }
-
+/**
+ * This function searches for elements according to the DOM content
+ */
 const search = function(){
     let searchBar = document.getElementById("searchBar")
 
@@ -209,15 +216,19 @@ const search = function(){
 
   
 }
-
+/**
+ * Clear all cards from DOM
+ */
 const cleanContainer = function(){
     let cardContainer = document.getElementById("cardContainer")
     cardContainer.innerHTML = ""
 }
 
+
 window.onload = function(){
     const url = "https://striveschool-api.herokuapp.com/api/product/"
-    getLengthOfEachLetter()
+    
+    getLengthOfEachLetter() //animation function
 
     getStore(url)
 
