@@ -1,7 +1,7 @@
 let totalProduct = 0;
 let totalPrice = 0;
 
-
+//TODO: after searching it doenst add to card + (done: search funcion changed.It's resulting by DOM elem. instead of filteredArra)
 const getStore = async function(url){
     
     const headers = new Headers({
@@ -13,7 +13,7 @@ const getStore = async function(url){
         let response = await fetch(url,{method:"GET",headers})
         let data = await response.json()
         displayCards(data)
-        search(data)
+        search()
         addProductToCard()
         removeElementFromCard()
         
@@ -35,7 +35,7 @@ const displayCards = function(arr){
 const generateCard = function(obj){
     return `<div id="cardCont" class="col-12 col-md-6 col-lg-3 mx-3 my-3 mx-md-3 my-md-3">
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="${obj.imageUrl}" alt="Card image cap" style="height:300px">
+      <img class="card-img-top" src="${obj.imageUrl}" alt="Card image cap" style="height:300px;object-fit:cover">
       <div class="card-body">
         <h5 class="card-title">${obj.name}</h5>
         
@@ -168,19 +168,43 @@ const cleanCard = function(){
     totalPrice = 0
 }
 
-const search = function(array){
+// const search = function(array){
+//     let searchBar = document.getElementById("searchBar")
+
+    
+//     searchBar.addEventListener("keyup",(e) => {
+//         let keyword = e.target.value;
+
+//         let filteredArray = array.filter(product =>{
+            
+//             return product.name.toLowerCase().includes(keyword) || product.brand.toLowerCase().includes(keyword)
+//         })
+//         console.log(filteredArray)
+//         cleanContainer()
+//         displayCards(filteredArray)
+//         addProductToCard()
+//     })
+
+  
+// }
+
+const search = function(){
     let searchBar = document.getElementById("searchBar")
 
+    let allCards = document.querySelectorAll("#cardContainer #cardCont")
     searchBar.addEventListener("keyup",(e) => {
         let keyword = e.target.value;
 
-        let filteredArray = array.filter(product =>{
-            
-            return product.name.toLowerCase().includes(keyword) || product.brand.toLowerCase().includes(keyword)
+        allCards.forEach(card => {
+            card.style.display = "block"
+            let cardTitle = card.querySelector(".card-title").innerText.toLowerCase()
+            let brand = card.querySelector(".category").innerText.toLowerCase()
+
+            if(!(cardTitle.includes(keyword)||brand.includes(keyword))){
+                card.style.display = "none"
+            }
         })
-        console.log(filteredArray)
-        cleanContainer()
-        displayCards(filteredArray)
+        
     })
 
   
