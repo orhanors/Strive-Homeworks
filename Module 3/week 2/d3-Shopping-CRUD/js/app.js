@@ -15,6 +15,7 @@ const getStore = async function(url){
 
         let response = await fetch(url,{method:"GET",headers})
         let data = await response.json()
+        
         displayCards(data)
         search()
         addProductToCard()
@@ -46,9 +47,9 @@ const displayCards = function(arr){
  */
 const generateCard = function(obj){
     return `<div id="cardCont" class="col-12 col-md-6 col-lg-3 mx-3 my-3 mx-md-3 my-md-3">
-    <div class="card" style="width: 18rem;">
+    <div  class="card" style="width: 18rem;">
       <img class="card-img-top" src="${obj.imageUrl}" alt="Card image cap" style="height:300px;object-fit:cover">
-      <div class="card-body">
+      <div id=${obj._id} class="card-body">
         <h5 class="card-title">${obj.name}</h5>
         
         <div class="d-flex justify-content-end">
@@ -74,7 +75,8 @@ const generateCard = function(obj){
 }
 
 /**
- * Takes an event button which is different for every product and generates a table row according to the related card info
+ * Takes an event button which is different for every product(Add to card button)
+ * and generates a table row according to the related card info
  * @param {Node} targetButton 
  */
 const createTableRow = function(targetButton){
@@ -87,11 +89,16 @@ const createTableRow = function(targetButton){
     let newItem = sampleItem.cloneNode(true)
 
     let card = targetButton.parentElement.parentElement.parentElement.parentElement
+    let productId = card.querySelector(".card-body").getAttribute("id")
+    console.log(productId)
+    
+    
     newItem.querySelector("img")["src"] = card.querySelector("img")["src"]
 
     newItem.querySelector(".title").innerText = card.querySelector(".card-title").innerText.substring(0, 15) + "...";
     newItem.querySelector(".priceRow").innerText = card.querySelector(".price").innerText
     newItem.querySelector("#categoryRow").innerText = card.querySelector(".category").innerText
+    newItem.querySelector(".removeBtn").setAttribute("id",productId)
     newItem.classList.remove("hide")
     tableBody.append(newItem)
 
@@ -121,6 +128,7 @@ const addProductToCard = function(){
         
         btn.addEventListener("click",(e)=>{
            let cardBody = e.target.parentElement.parentElement.parentElement
+           
            cardBody["style"] = "background-color:rgb(149, 248, 149)"
            totalProduct += 1
 
@@ -137,6 +145,8 @@ const addProductToCard = function(){
 }
 /**
  * Removes spesific row from card and updates total price
+ * 
+ * Returns back to related card inital position (every card-body and its remove button has same id)
  */
 const removeElementFromCard = function(){
     var parent = document.querySelector("tbody");
@@ -148,8 +158,10 @@ const removeElementFromCard = function(){
     }
 
     function handler(e) {
+
+        let productId = e.target.getAttribute("id")
         let tableRow = e.path[2] //it gives the event's table row element
-        console.log(tableRow)
+        
         let elementPrice = tableRow.querySelector(".priceRow")
         elementPrice = elementPrice.innerText.slice(0,elementPrice.innerText.length-1)
         elementPrice = Number(elementPrice)
@@ -163,6 +175,9 @@ const removeElementFromCard = function(){
         totalProductText.innerText = totalProduct
         tableRow.classList.add("hide")
         e.target["style"] = "display:none"
+
+        let removedCard = document.getElementById(productId)
+        removedCard["style"] = "backgroud-color:white"
     }
 }
 
