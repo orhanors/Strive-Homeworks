@@ -18,6 +18,7 @@ const getStore = async function(url){
         
         displayCards(data)
         search()
+        modalImgTransition()
         addProductToCard()
         removeElementFromCard()
         
@@ -48,7 +49,7 @@ const displayCards = function(arr){
 const generateCard = function(obj){
     return `<div id="cardCont" class="col-12 col-md-6 col-lg-3 mx-3 my-3 mx-md-3 my-md-3">
     <div  class="card" style="width: 18rem;">
-      <img class="card-img-top" src="${obj.imageUrl}" alt="Card image cap" style="height:300px;object-fit:cover">
+      <img alt="${obj.name} by ${obj.brand}" class="card-img-top" src="${obj.imageUrl}" alt="Card image cap" style="height:300px;object-fit:cover">
       <div id=${obj._id} class="card-body">
         <h5 class="card-title">${obj.name}</h5>
         
