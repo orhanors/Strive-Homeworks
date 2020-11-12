@@ -66,7 +66,7 @@ const fillFormForEditing = async function(url){
         document.getElementById("description").value = product.description
         document.getElementById("brand").value = product.brand
         document.getElementById("image").value = product.imageUrl
-        // document.getElementById("image").disabled = true
+        document.getElementById("image").disabled = true
         document.getElementById("price").value = product.price
 
     } catch (error) {
