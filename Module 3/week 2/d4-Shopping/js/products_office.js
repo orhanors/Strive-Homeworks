@@ -30,6 +30,7 @@ const getProducts = async function(url){
     
 }
 
+
 /**
  * Adds delete function for all delete buttons
  */
@@ -40,6 +41,7 @@ const handleDelete = function(){
         btn.addEventListener("click",(e) => deleteProcess(e))
     })
 }
+
 
 /**
  *  Adds edit function for all edit buttons
@@ -67,9 +69,9 @@ const deleteProcess = function(e){
 
     confirmationModal.style.display = "block"
 
-    let modalText = confirmationModal.querySelector("p").innerText
-    modalText = ""
-    modalText += "Are you sure you want to delete "+ e.target.closest("tr").querySelector("#name").innerText +"?"
+    confirmationModal.querySelector("p").innerText = ""
+   
+    confirmationModal.querySelector("p").innerText += "Are you sure you want to delete "+ e.target.closest("tr").querySelector("#name").innerText +"?"
 
     
     confirmationModal.addEventListener("click",async (event) => {
@@ -98,9 +100,6 @@ const editProcess = function(e){
         window.location.href = `back_office.html?id=${productId}`
     }
 }
-
-
-
 
 
 
