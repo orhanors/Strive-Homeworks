@@ -4,6 +4,10 @@ const headers = new Headers({
 })
 let buttonSpinner = document.getElementById("buttonSpinner")
 
+/**
+ * Applies POST process  
+ * @param {String} url Apı url
+ */
 const postProduct = async function(url){
     const body = JSON.stringify(createProduct())
     buttonSpinner.classList.toggle("d-none")
@@ -24,6 +28,10 @@ const postProduct = async function(url){
     }
 } 
 
+/**
+ * Apllies EDIT process
+ * @param {String} url 
+ */
 const editProduct = async function(url){
     
     const editedBody = JSON.stringify(createProduct())
@@ -48,6 +56,21 @@ const editProduct = async function(url){
 
 }
 
+const handleSubmit = function(e,url){
+    e.preventDefault()
+    postProduct(url)    
+}
+
+const handleEdit = function(e,url){
+    e.preventDefault()
+    let id = new URLSearchParams(window.location.search).get("id")
+    editProduct(url+id)
+}
+
+
+/**
+ * Cleans input form content after sending information
+ */
 const cleanFormContent = function(){
         document.getElementById("name").value = ""
         document.getElementById("description").value = ""
@@ -56,6 +79,10 @@ const cleanFormContent = function(){
         document.getElementById("price").value = ""
 }
 
+/**
+ * Fills form values regarding with id
+ * @param {String} url 
+ */
 const fillFormForEditing = async function(url){
     let id = new URLSearchParams(window.location.search).get("id")
 
@@ -74,18 +101,8 @@ const fillFormForEditing = async function(url){
     }
 
     
-}    
-const handleSubmit = function(e,url){
-    e.preventDefault()
-    postProduct(url)    
 }
 
-const handleEdit = function(e,url){
-    
-    e.preventDefault()
-    let id = new URLSearchParams(window.location.search).get("id")
-    editProduct(url+id)
-}
 
 const createProduct = function(){
 
@@ -112,6 +129,8 @@ window.onload = function(){
     const form = document.getElementById("productForm")
 
     let id = new URLSearchParams(window.location.search).get("id")
+
+    // İf there is id in the URL call EDIT operations, else call POST operations
     if(id){
         document.querySelector("h3").innerText = "Edit Product"
         fillFormForEditing(url)
@@ -121,6 +140,4 @@ window.onload = function(){
        
     }
    
-
-
 }

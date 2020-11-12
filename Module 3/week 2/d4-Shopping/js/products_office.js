@@ -4,6 +4,10 @@ const headers = new Headers({
 
 const url = "https://striveschool-api.herokuapp.com/api/product/"
 
+/**
+ * Takes API url and makes actions
+ * @param {String} url API url 
+ */
 const getProducts = async function(url){
     let spinner = document.getElementById("loadingSpinner")
     spinner.classList.toggle("d-none")
@@ -18,6 +22,7 @@ const getProducts = async function(url){
             handleDelete()
             handleEdit()
             modalImgTransition()
+            document.getElementById("searchBar").addEventListener("keyup",(e) => handleSearch(e))
         }
     } catch (error) {
         console.log(error)
@@ -25,6 +30,9 @@ const getProducts = async function(url){
     
 }
 
+/**
+ * Adds delete function for all delete buttons
+ */
 const handleDelete = function(){
     let deleteBtns = document.querySelectorAll("#delete")
 
@@ -33,6 +41,9 @@ const handleDelete = function(){
     })
 }
 
+/**
+ *  Adds edit function for all edit buttons
+ */
 const handleEdit = function(){
     let editBtns = document.querySelectorAll("#edit")
 
@@ -40,7 +51,13 @@ const handleEdit = function(){
         btn.addEventListener("click",(e) => editProcess(e))
     })
 }
+
+/**
+ * Shows confirmation modal and operates DELETE 
+ * @param {Node} e active delete button
+ */
 const deleteProcess = function(e){
+
     let eventRow  = e.target.closest("tr")
     let productID = eventRow.querySelector("th").innerText
 
@@ -49,8 +66,10 @@ const deleteProcess = function(e){
 
 
     confirmationModal.style.display = "block"
-    confirmationModal.querySelector("p").innerText = ""
-    confirmationModal.querySelector("p").innerText += "Are you sure you want to delete "+ e.target.closest("tr").querySelector("#name").innerText +"?"
+
+    let modalText = confirmationModal.querySelector("p").innerText
+    modalText = ""
+    modalText += "Are you sure you want to delete "+ e.target.closest("tr").querySelector("#name").innerText +"?"
 
     
     confirmationModal.addEventListener("click",async (event) => {
@@ -68,6 +87,10 @@ const deleteProcess = function(e){
     })
 }
 
+/**
+ * Adds id to edit page and redirects to this page
+ * @param {Node} e current edit button
+ */
 const editProcess = function(e){
     let productId = e.target.closest("tr").querySelector(".productID").innerText
     
@@ -84,6 +107,8 @@ const editProcess = function(e){
 const getTableBody = function(){
     return document.querySelector(".table.table-bordered tbody")
 }
+
+
 /**
  * Takes whole data array and generates rows 
  * @param {Array} array Fetched array 
@@ -107,7 +132,7 @@ const generateProductRow = function(product){
                 <th class="productID" scope="row">${product._id}</th>
                 <td> <img src="${product.imageUrl}" alt="${product.name} by ${product.brand}"></td>
                 <td id="name">${product.name}</td>
-                <td>${product.brand}</td>
+                <td id="brand">${product.brand}</td>
                 <td>${product.price}</td>
                 <td class="text-center">
                 
@@ -117,6 +142,9 @@ const generateProductRow = function(product){
            </tr>`
 }
 
+/**
+ * Redirects user to the index page when he clicks to title
+ */
 const titleRedirect = function(){
     let title = document.querySelector("h1")
 
@@ -124,6 +152,32 @@ const titleRedirect = function(){
         window.open("index.html","_blank")
     })
 }
+
+/**
+ * Operates search function and changes table row's behavior according to 'name' and 'brand'
+ * @param {Node} e typed keyword
+ */
+const handleSearch = function(e){
+    let keyword = document.getElementById("searchBar").value
+
+    let allRows = document.querySelectorAll("tbody tr")
+   
+
+    allRows.forEach((row)=>{
+       
+        row.style.display = "table-row"
+        let name = row.querySelector("#name").innerText.toLowerCase()
+        let brand = row.querySelector("#brand").innerText.toLowerCase()
+        
+        if(!(name.includes(keyword) || brand.includes(keyword))){
+           
+            row.style.display = "none"
+        }
+    })
+
+    
+}
+
 window.onload = function(){
     titleRedirect()
     
