@@ -38,7 +38,7 @@ const editProduct = async function(url){
     buttonSpinner.classList.toggle("d-none")
 
     try {
-        console.log(editedBody)
+        
         let response = await fetch(url,{method:"PUT",body:editedBody,headers})
         if(response.ok){
             alert("Successfuly Edited")
@@ -112,7 +112,7 @@ const createProduct = function(){
     let image = document.getElementById("image").value
     let price = document.getElementById("price").value
 
-    console.log([name,description,brand,image,price])
+    
     return {
         "name": name,  //REQUIRED
         "description": description, //REQUIRED

@@ -79,7 +79,6 @@ const deleteProcess = function(e){
             try{
                 let response = await fetch(url+productID, {method:"DELETE",headers})
                 if(response.ok){
-
                    eventRow.style.display ="none"
                 }
             }catch(err){

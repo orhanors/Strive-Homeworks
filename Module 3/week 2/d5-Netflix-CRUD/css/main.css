@@ -1,0 +1,72 @@
+body {
+	background-color: #101010;
+}
+
+nav {
+	background-color: #101010 !important;
+}
+nav img {
+	height: 3em;
+}
+
+/*foooter*/
+
+footer {
+	height: 70px;
+}
+
+footer ul {
+	display: inline-block;
+}
+
+footer ul li {
+	list-style-type: none;
+}
+
+footer .btn {
+	border: solid 3px #5a5a5a;
+}
+
+.move {
+	display: flex;
+}
+
+.dropdown {
+	top: -10px;
+}
+
+.dropdown-toggle::after {
+	margin-left: 1.225em;
+}
+
+#user {
+	top: 10px;
+}
+
+h5 {
+	color: white;
+}
+
+.row img {
+  width: 12em;
+  height: 12em;
+}
+
+.footer a {
+	color: gray;
+}
+.footer p {
+	color: gray;
+}
+
+.dropdown-item:hover {
+	background-color: grey;
+}
+
+.btn:hover {
+	box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
+}
+
+nav {
+	margin-right: 30px;
+}

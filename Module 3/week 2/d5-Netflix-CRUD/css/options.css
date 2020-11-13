@@ -1,0 +1,57 @@
+/*Select*/
+
+/* Reset Select */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #6d0404b6;
+    background-image: none;
+  }
+  .select-group{
+      margin-right: 12.5rem;
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  /* Custom Select */
+  .select {
+    position: relative;
+    display: flex;
+    width: 40.8em;
+    height: 2em;
+    line-height: 2;
+    background:#851906ef;
+    overflow: hidden;
+    border-radius: .25em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  select {
+    flex: 1;
+    padding: 0 .5em;
+    color: rgb(255, 248, 248);
+    cursor: pointer;
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #851906ef;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+  }
+  /* Transition */
+  .select:hover::after {
+    color:#851906ef;
+  }
